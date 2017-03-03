@@ -49,9 +49,9 @@ h1 {
     overflow: auto;
   }
 
-  .tabs1-01--tab1:checked ~ .tabs1-01--content1, 
-  .tabs1-01--tab2:checked ~ .tabs1-01--content2, 
-  .tabs1-01--tab3:checked ~ .tabs1-01--content3 {
+  .tabs1-01_tab1:checked ~ .tabs1-01_content1, 
+  .tabs1-01_tab2:checked ~ .tabs1-01_content2, 
+  .tabs1-01_tab3:checked ~ .tabs1-01_content3 {
     display: block;
   }
 }
