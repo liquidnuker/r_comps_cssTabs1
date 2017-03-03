@@ -81,4 +81,66 @@ h1 {
 
 // tabs1-02
 // ==================================================/
+.tabs1-02 {
+  > input[type="radio"] {
+    position: absolute;
+    left:-100px;
+    top:-100px;
+  }
+
+  > input[type="radio"] + label {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #000;  
+    border-radius: 3px 3px 0px 0px; /* tl tr br bl */ 
+    padding: 5px 10px;
+  }
+
+  > input[type="radio"]:focus + label {
+    border: 1px solid #000;
+  }
+
+  > input[type="radio"]:checked + label {
+    font-weight: bold;
+    border-bottom-color: #fff;  
+  }
+
+  > div {
+    display: none;
+    margin-top: -1px;
+    padding: 10px 10px;
+    height: 100%;
+    background-color: white;
+    border: 1px solid black;  
+    overflow: auto;
+  }
+
+  .tabs1-02_tab1:checked ~ .tabs1-02_content1, 
+  .tabs1-02_tab2:checked ~ .tabs1-02_content2, 
+  .tabs1-02_tab3:checked ~ .tabs1-02_content3 {
+    display: block;
+  }
+}
+
+// tabs1-01 media queries
+// ==================================================/
+// up to 3 tabs
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .tabs1-02 {
+    > input[type="radio"] + label {
+      width: 28%;
+      
+    }
+  }
+}
+
+// *mobile landscape (480x320)
+@include mq($from: mobileLandscape) {
+  .tabs1-02 {
+    > input[type="radio"] + label {
+      width: auto;      
+    }
+  }
+}
 
