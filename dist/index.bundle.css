@@ -795,7 +795,8 @@ h1 {
   top: -9999px; }
 
 .tabs1-02 > input[type="radio"] + label {
-  float: right; }
+  float: right;
+  margin-bottom: -1px; }
 
 .tabs1-02 > input[type="radio"] + label {
   display: inline-block;
@@ -814,9 +815,7 @@ h1 {
 
 .tabs1-02 > div {
   display: none;
-  margin-top: -1px;
   padding: 10px 10px;
-  height: 100%;
   width: 100%;
   background-color: white;
   border: 1px solid black;
