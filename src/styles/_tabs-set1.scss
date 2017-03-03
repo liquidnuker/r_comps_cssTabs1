@@ -19,8 +19,8 @@ h1 {
 .tabs1-01 {
   > input[type="radio"] {
     position: absolute;
-    left:-100px;
-    top:-100px;
+    left: -9999px;
+    top: -9999px;
   }
 
   > input[type="radio"] + label {
@@ -84,8 +84,8 @@ h1 {
 .tabs1-02 {
   > input[type="radio"] {
     position: absolute;
-    left:-100px;
-    top:-100px;
+    left:-9999px;
+    top:-9999px;
   }
 
   > input[type="radio"] + label {
