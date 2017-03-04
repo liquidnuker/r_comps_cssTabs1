@@ -153,6 +153,8 @@ h1 {
 // up to 3 tabs
 
 .tabs1-03 {
+  @extend %text--center;
+
   > input[type="radio"] {
     position: absolute;
     left: -9999px;
@@ -177,6 +179,7 @@ h1 {
   }
 
   > div {
+    @extend %text--left;
     display: none;
     margin-top: -1px;
     padding: 10px 10px;
