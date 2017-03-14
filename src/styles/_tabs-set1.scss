@@ -212,3 +212,72 @@ h1 {
     }
   }
 }
+
+// tabs1-04
+// ==================================================/
+// up to 3 tabs
+.tabs1-04 {
+  @extend %text--center;
+
+  > input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+
+  > input[type="radio"] + label {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #000;  
+    border-radius: 3px 3px 0px 0px; /* tl tr br bl */ 
+    padding: 5px 10px;
+  }
+
+  > input[type="radio"]:focus + label {
+    border: 1px solid #000;
+  }
+
+  > input[type="radio"]:checked + label {
+    font-weight: bold;
+    border-bottom-color: #fff;  
+  }
+
+  > div {
+    @extend %text--left;
+    display: none;
+    margin-top: -1px;
+    padding: 10px 10px;
+    height: 100%;
+    background-color: white;
+    border: 1px solid black;  
+    overflow: auto;
+  }
+
+  .tabs1-04_tab1:checked ~ .tabs1-04_content1, 
+  .tabs1-04_tab2:checked ~ .tabs1-04_content2, 
+  .tabs1-04_tab3:checked ~ .tabs1-04_content3 {
+    display: block;
+  }
+}
+
+// tabs1-03 media queries
+// ==================================================/
+// up to 3 tabs
+// mobile portrait (320x480) 
+@include mq($from: mobile) {
+  .tabs1-04 {
+    > input[type="radio"] + label {
+      width: 28%;
+      
+    }
+  }
+}
+
+// *mobile landscape (480x320)
+@include mq($from: mobileLandscape) {
+  .tabs1-04 {
+    > input[type="radio"] + label {
+      width: auto;      
+    }
+  }
+}
