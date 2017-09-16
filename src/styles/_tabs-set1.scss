@@ -32,7 +32,7 @@
 
 .tabs1-01 {
   > input[type="radio"] {
-    position: absolute;
+    @extend %pos--absolute;
     left: -9999px;
     top: -9999px;
   }
@@ -53,7 +53,7 @@
 
   > div {
     @extend %padd--4;
-    display: none;
+    @extend %display--none;
     margin-top: -1px;
     height: 100%;
     overflow: auto;
@@ -62,7 +62,7 @@
   .tabs1-01_tab1:checked ~ .tabs1-01_content1, 
   .tabs1-01_tab2:checked ~ .tabs1-01_content2, 
   .tabs1-01_tab3:checked ~ .tabs1-01_content3 {
-    display: block;
+    @extend %display--block;
   }
 }
 
@@ -90,43 +90,70 @@
 
 // tabs1-02
 // ==================================================/
+@mixin tabs1-02_theme() {
+  .tabs1-02 {
+    background-color: #141416;
+
+    // tab color
+    > input[type="radio"] + label {
+      background-color: #e2e0e1;
+      border: 1px solid #2a2a2d;
+      
+      &:hover {
+        background-color: #eee;
+      }  
+    }
+
+    > input[type="radio"]:checked + label {
+      background-color: #fff;
+      border-bottom-color: #141416;  
+      border-top: 1px solid #be0101; 
+    }
+
+    > div {
+      border: 1px solid #2a2a2d;  
+      color: #d5d5d5;
+    }
+  }
+}
+@include tabs1-02_theme();
+
 .tabs1-02 {
   > input[type="radio"] {
-    position: absolute;
+    @extend %pos--absolute;
     left:-9999px;
     top:-9999px;
   }
 
   > input[type="radio"] + label {
+    @extend %display--inline-block;
     float: right;
     margin: 0 2px -1px 2px; /* trbl */
-    display: inline-block;
     border-radius: 3px 3px 0px 0px; /* tl tr br bl */ 
     padding: 5px 10px;
   }
 
   > input[type="radio"]:focus + label {
-    border: 1px solid #000;
+    
   }
 
   > input[type="radio"]:checked + label {
-    font-weight: bold;
-    border-bottom-color: #fff;  
+    
   }
 
   > div {
-    display: none;
-    padding: 10px 10px;
+    @extend %display--none;
+    @extend %padd--4;
+    margin-top: -1px;
+    height: 100%;
     width: 100%;
-    background-color: white;
-    border: 1px solid black;  
     overflow: auto;
   }
 
   .tabs1-02_tab1:checked ~ .tabs1-02_content1, 
   .tabs1-02_tab2:checked ~ .tabs1-02_content2, 
   .tabs1-02_tab3:checked ~ .tabs1-02_content3 {
-    display: block;
+    @extend %display--block;
   }
 }
 
